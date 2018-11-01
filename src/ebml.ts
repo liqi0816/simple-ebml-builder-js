@@ -1,5 +1,5 @@
 import memoize from "lodash-es/memoize";
-import { numberToByteArray, stringToByteArray } from "./typedArrayUtils";
+import { numberToByteArray, stringToByteArray, int16Bit, float32bit } from "./typedArrayUtils";
 
 export interface EBMLData {
     write(buf: Uint8Array, pos: number): number;
@@ -53,6 +53,14 @@ export const number = memoize((num: number): Value => {
 
 export const vintEncodedNumber = memoize((num: number): Value => {
     return bytes(vintEncode(numberToByteArray(num, getEBMLByteLength(num))));
+});
+
+export const int16 = memoize((num: number): Value => {
+    return bytes(int16Bit(num));
+});
+
+export const float = memoize((num: number): Value => {
+    return bytes(float32bit(num));
 });
 
 export const string = memoize((str: string): Value => {
