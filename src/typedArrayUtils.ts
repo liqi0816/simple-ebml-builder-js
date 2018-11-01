@@ -1,4 +1,4 @@
-import * as memoize from "lodash.memoize";
+import memoize from "lodash-es/memoize";
 
 export const numberToByteArray = (num: number, byteLength: number = getNumberByteLength(num)): Uint8Array => {
     let byteArray;

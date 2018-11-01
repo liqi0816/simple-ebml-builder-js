@@ -1,4 +1,4 @@
-import * as memoize from "lodash.memoize";
+import memoize from "lodash-es/memoize";
 import { numberToByteArray, stringToByteArray } from "./typedArrayUtils";
 
 export interface EBMLData {

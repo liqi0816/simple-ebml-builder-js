@@ -1,4 +1,4 @@
-declare module "lodash.memoize" {
+declare module "lodash-es/memoize" {
     const memoize: (func: Function, resolver?: Function) => Function;
-    export = memoize;
+    export default memoize;
 }

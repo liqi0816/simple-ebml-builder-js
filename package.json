@@ -9,6 +9,7 @@
   ],
   "repository": "https://github.com/ryiwamoto/simple-ebml-builder-js.git",
   "main": "build/index.js",
+  "module": "build/es/index.js",
   "types": "build/dts/index.d.ts",
   "devDependencies": {
     "@types/benchmark": "^1.0.30",
@@ -26,6 +27,7 @@
   },
   "scripts": {
     "build": "rm -rf build && tsc --declaration --rootDir ./src --outDir ./build --declarationDir ./build/dts",
+    "build:es": "rm -rf build/es && tsc --declaration --rootDir ./src --outDir ./build/es --declarationDir ./build/dts --module ES6 --target ES2017",
     "test": "npm run lint && mocha --compilers ts:espower-typescript/guess test/**/*.spec.ts",
     "test:watch": "mocha --watch --compilers ts:espower-typescript/guess test/**/*.spec.ts",
     "lint": "tslint './{src,test, perf}/**/*.ts'",
@@ -36,6 +38,6 @@
   "author": "ryiwamoto <konnpekigan@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "lodash.memoize": "^4.1.2"
+    "lodash-es": "^4.17.11"
   }
 }
